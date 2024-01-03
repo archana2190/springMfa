@@ -1,0 +1,23 @@
+spring:
+  jpa:
+    hibernate:
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+      ddl-auto: create-drop
+    open-in-view: on
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.SQLServerDialect
+  datasource:
+    continueOnError: 'true'
+    url: jdbc:sqlserver://archanapoc.database.windows.net;databaseName=archana-poc-db;useSSL=true
+    username: archana
+    password: Admin@001
+
+application:
+  security:
+    jwt:
+      secret-key: 404E635266556A586E3272357538782F413F4428472B4B6250645367566B5970
+      expiration: 86400000 # a day
+      refresh-token:
+        expiration: 604800000 # 7 days
